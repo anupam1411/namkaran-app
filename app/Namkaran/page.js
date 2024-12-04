@@ -7,10 +7,12 @@ import "leaflet/dist/leaflet";
 import MapComponent from "@/components/MapComponent";
 // import L from "leaflet";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const initialCenter = [20.5937, 78.9629]; // Initial center of the map (India)
 
 export default function NamkaranForm() {
+  const router = useRouter();
   const { register, handleSubmit, setValue } = useForm();
   const [selectedPosition, setSelectedPosition] = useState(null);
   const [locationDetails, setLocationDetails] = useState({});
@@ -51,7 +53,12 @@ export default function NamkaranForm() {
       if (response.status === 200) {
         const generatedNames = response.data.names;
         console.log("Generated Names:", generatedNames);
-        alert(`Generated Names: ${generatedNames.join(", ")}`);
+        // alert(`Generated Names: ${generatedNames.join(", ")}`);
+        router.push(
+          `/NameList?names=${encodeURIComponent(
+            JSON.stringify(generatedNames)
+          )}`
+        );
       } else {
         console.error("Failed to generate names.");
       }
