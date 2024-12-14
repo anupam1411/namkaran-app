@@ -29,42 +29,53 @@ export default function LandingPage() {
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {/* Feature 1 */}
-          <div className="text-center p-6 bg-white rounded-lg shadow-md">
+          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform hover:scale-105 duration-300 ease-in-out">
             <Image
-              src="/path/to/icon1.svg"
+              src="/AI.gif"
               alt="Feature 1"
-              width={50}
-              height={50}
+              width={100}
+              height={100}
+              className="  "
             />
-            <h3 className="text-xl font-medium mt-4">Generate Unique Names</h3>
-            <p className="mt-2 text-gray-600">
+            <h3 className="text-3xl font-semibold text-cyan-900 mt-6">
+              Generate Unique Names
+            </h3>
+            <p className="mt-4 text-gray-700 leading-relaxed text-lg max-w-sm">
               Get personalized name suggestions based on cultural preferences.
             </p>
           </div>
           {/* Feature 2 */}
-          <div className="text-center p-6 bg-white rounded-lg shadow-md">
+          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform hover:scale-105 duration-300 ease-in-out">
             <Image
-              src="/path/to/icon2.svg"
+              src="/location.gif"
               alt="Feature 2"
-              width={50}
-              height={50}
+              width={100}
+              height={100}
+              className="  "
             />
-            <h3 className="text-xl font-medium mt-4">Location-based Naming</h3>
-            <p className="mt-2 text-gray-600">
+            <h3 className="text-3xl font-semibold text-cyan-900 mt-6">
+              Location-based Naming
+            </h3>
+            <p className="mt-4 text-gray-700 leading-relaxed text-lg max-w-sm">
               Select the birth location on the map to personalize the name.
             </p>
           </div>
+
           {/* Feature 3 */}
-          <div className="text-center p-6 bg-white rounded-lg shadow-md">
+          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform transition-transform hover:scale-105 duration-300 ease-in-out">
             <Image
-              src="/path/to/icon3.svg"
+              src="/ease.gif"
               alt="Feature 3"
-              width={50}
-              height={50}
+              width={100}
+              height={100}
+              className="  "
             />
-            <h3 className="text-xl font-medium mt-4">Easy to Use</h3>
-            <p className="mt-2 text-gray-600">
-              Simple and intuitive interface for a smooth user experience.
+            <h3 className="text-3xl font-semibold text-cyan-900 mt-6">
+              Easy to Use
+            </h3>
+            <p className="mt-4 text-gray-700 leading-relaxed text-lg max-w-sm">
+              Enjoy a simple and intuitive interface for a smooth user
+              experience.
             </p>
           </div>
         </div>
@@ -80,7 +91,7 @@ export default function LandingPage() {
             <h3 className="text-xl font-semibold text-gray-800">
               Step 1: Enter Child’s Details
             </h3>
-            <p className="mt-2 text-gray-600">
+            <p className="mt-4 text-gray-700 leading-relaxed text-lg max-w-sm">
               Provide the child’s date and time of birth.
             </p>
           </div>
@@ -88,7 +99,7 @@ export default function LandingPage() {
             <h3 className="text-xl font-semibold text-gray-800">
               Step 2: Select Birth Location
             </h3>
-            <p className="mt-2 text-gray-600">
+            <p className="mt-4 text-gray-700 leading-relaxed text-lg max-w-sm">
               Choose the place of birth on an interactive map.
             </p>
           </div>
@@ -96,7 +107,7 @@ export default function LandingPage() {
             <h3 className="text-xl font-semibold text-gray-800">
               Step 3: Get Name Suggestions
             </h3>
-            <p className="mt-2 text-gray-600">
+            <p className="mt-4 text-gray-700 leading-relaxed text-lg max-w-sm">
               Receive a list of suggested names based on the details provided.
             </p>
           </div>
@@ -108,12 +119,15 @@ export default function LandingPage() {
         <p>&copy; 2024 Namkaran App. All rights reserved.</p>
         <div className="mt-4">
           <Link
-            href="/privacy-policy"
+            href="/UnderDevelopment"
             className="text-gray-400 hover:text-white mx-4"
           >
             Privacy Policy
           </Link>
-          <Link href="/terms" className="text-gray-400 hover:text-white mx-4">
+          <Link
+            href="/UnderDevelopment"
+            className="text-gray-400 hover:text-white mx-4"
+          >
             Terms of Service
           </Link>
         </div>
