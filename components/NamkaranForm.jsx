@@ -5,11 +5,15 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet";
-import MapComponent from "@/components/MapComponent";
+// import MapComponent from "@/components/MapComponent";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
 
+const MapComponent = dynamic(() => import("@/components/MapComponent"), {
+  ssr: false,
+});
 const initialCenter = [20.5937, 78.9629]; // Initial center of the map (India)
 
 export default function NamkaranForm() {
