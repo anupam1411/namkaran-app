@@ -1,7 +1,17 @@
 "use client";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react"; // Import Suspense
 
 export default function NameList() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      {/* Add Suspense boundary */}
+      <NameListContent />
+    </Suspense>
+  );
+}
+
+function NameListContent() {
   const searchParams = useSearchParams();
   const names = JSON.parse(searchParams.get("names"));
 
@@ -26,13 +36,7 @@ export default function NameList() {
             >
               <div className="flex flex-col">
                 <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
-                {/* <p className="text-sm text-gray-500 mt-2">
-                  Meaning goes here (if you want to add meanings, we can do so)
-                </p> */}
               </div>
-              {/* <button className="text-blue-600 hover:text-blue-800 font-semibold text-sm">
-                Select
-              </button> */}
             </div>
           ))}
         </div>
