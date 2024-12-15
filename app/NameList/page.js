@@ -1,5 +1,5 @@
 "use client";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { Suspense } from "react"; // Import Suspense
 
 export default function NameList() {
@@ -14,6 +14,7 @@ export default function NameList() {
 function NameListContent() {
   const searchParams = useSearchParams();
   const names = JSON.parse(searchParams.get("names"));
+  const router = useRouter();
 
   return (
     <div className="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen py-12">
@@ -43,7 +44,7 @@ function NameListContent() {
 
         <div className="text-center mt-8">
           <button
-            onClick={() => window.history.back()}
+            onClick={() => router.push("/Namkaran")}
             className="py-3 px-6 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition duration-200"
           >
             Go Back
