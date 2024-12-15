@@ -8,7 +8,6 @@ import "leaflet/dist/leaflet";
 // import MapComponent from "@/components/MapComponent";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 
 const MapComponent = dynamic(() => import("@/components/MapComponent"), {
@@ -17,20 +16,6 @@ const MapComponent = dynamic(() => import("@/components/MapComponent"), {
 const initialCenter = [20.5937, 78.9629]; // Initial center of the map (India)
 
 export default function NamkaranForm() {
-  const reloadRef = useRef(false);
-
-  useEffect(() => {
-    if (reloadRef.current) {
-      window.location.reload();
-      reloadRef.current = false;
-    }
-  }, []);
-
-  useEffect(() => {
-    // Trigger the reload after some condition or delay
-    reloadRef.current = true;
-  }, []);
-
   const router = useRouter();
   const { register, handleSubmit, setValue } = useForm();
   const [selectedPosition, setSelectedPosition] = useState(null);
