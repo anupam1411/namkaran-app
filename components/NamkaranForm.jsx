@@ -1,14 +1,14 @@
 // components/NamkaranForm.jsx
 "use client";
 import "@/public/lib/leafletConfig";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet";
-// import MapComponent from "@/components/MapComponent";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
+
+// import MapComponent from "@/components/MapComponent";
 
 const MapComponent = dynamic(() => import("@/components/MapComponent"), {
   ssr: false,
@@ -22,7 +22,19 @@ export default function NamkaranForm() {
   const [locationDetails, setLocationDetails] = useState({});
   const [isLoading, setIsLoading] = useState(false); // Loading state
   const [formSubmitted, setFormSubmitted] = useState(false); // Track submission state
+  const reloadRef = useRef(false);
 
+  useEffect(() => {
+    if (reloadRef.current) {
+      window.location.reload();
+      reloadRef.current = false;
+    }
+  }, []);
+
+  useEffect(() => {
+    // Trigger the reload after some condition or delay
+    reloadRef.current = true;
+  }, []);
   const reverseGeocode = async (lat, lng) => {
     try {
       const response = await fetch(
