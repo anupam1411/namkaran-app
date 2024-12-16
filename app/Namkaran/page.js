@@ -1,3 +1,4 @@
+"use client";
 import NamkaranForm from "@/components/NamkaranForm";
 
 export default function Namkaran() {

@@ -25,7 +25,7 @@ export default function NamkaranForm() {
   const reloadRef = useRef(false);
 
   useEffect(() => {
-    if (reloadRef.current) {
+    if (typeof window !== "undefined" && reloadRef.current) {
       window.location.reload();
       reloadRef.current = false;
     }
